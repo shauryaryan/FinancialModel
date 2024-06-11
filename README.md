@@ -1,3 +1,47 @@
+Data Modeling App
+
+I have tried to create a Data modeling app to simplify, analyze, and visualize datasets for companies . The app aims to make working with financial data easier, more efficient, and less time-consuming by providing tools for data cleaning, analysis, and visualization.
+
+## Features
+
+- **Data Upload**: Upload financial data files (CSV format).
+- **Data Cleaning**: Clean data to remove inconsistencies and missing values.
+- **Data Analysis**: Perform statistical analysis and trend detection on the data.
+- **Data Visualization**: Visualize data through various charts and tables.
+- **Report Generation**: Generate detailed reports based on the analysis.
+
+## Technology Stack
+
+- **Frontend**: React, Material-UI, Recharts
+- **Backend**: Node.js, Express.js, Python (for data processing)
+- **Data Processing**: Pandas library in Python
+- **Version Control**: Git, GitHub
+
+## Installation
+
+Follow these steps to set up and run the project locally.
+
+### Prerequisites
+
+- **Node.js**: Download and install from [Node.js](https://nodejs.org/).
+- **Python**: Ensure Python 3.x is installed.
+- **Git**: Download and install from [Git](https://git-scm.com/).
+
+### Steps
+
+1. **Clone the Repository**:
+
+   ```sh
+   git clone https://github.com/shauryaaryan/FinancialModeling.git
+   cd FinancialModeling
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -39,33 +83,43 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+To ensure that your backend server is running, you can follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ Check the Server Status in Terminal
+Run the backend server in your terminal and ensure there are no errors:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Navigate to the Backend Directory
+cd ~/WebstormProjects/financialmodeling/backend
+Start the Server:
+node server.js
+You should see output similar to:
+Server running on http://localhost:5000
 
-### Code Splitting
+2. Verify the Server is Running in a Browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Open your web browser and navigate to http://localhost:5000. You should see a response indicating the server is running.
 
-### Analyzing the Bundle Size
+For example, if you configured your root route to return a simple HTML message, you should see:
+<h1>Backend Server is Running</h1>
+<p>Welcome to the Financial Modeling API</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Test API Endpoints
 
-### Making a Progressive Web App
+You can use a tool like Postman or curl to test your API endpoints.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Just Upload Endpoint:
+curl -X POST http://localhost:5000/api/upload -F 'file=@path/to/your/file.csv'
+Clean Endpoint:
+curl -X POST http://localhost:5000/api/clean -H "Content-Type: application/json" -d '{"filePath":"/uploads/your_uploaded_file.csv"}'
+Analyze Endpoint:
+curl -X POST http://localhost:5000/api/analyze -H "Content-Type: application/json" -d '{"filePath":"/uploads/your_uploaded_file.csv"}'
+Report Endpoint:
+curl -X POST http://localhost:5000/api/report -H "Content-Type: application/json" -d '{"filePath":"/uploads/your_uploaded_file.csv"}'
+Replace path/to/your/file.csv and /uploads/your_uploaded_file.csv with actual paths.
 
-### Deployment
+4. Check Logs for Errors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# DataModel
+To ensure there are no errors in the terminal where you started the server. If you see errors, troubleshoot them based on the error messages.
+By following these steps, the backend server should be running correctly. If you encounter any issues, please reach out to me.
